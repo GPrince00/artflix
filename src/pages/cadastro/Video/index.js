@@ -1,11 +1,11 @@
 import React from 'react';
-
+import PageDefault from '../../../components/PageDefault';
 
 function Video() {
   return (
-    <div >
-     <h1>Cadastro de Video</h1>
-    </div>
+    <PageDefault>
+        Pagina de cadastro
+    </PageDefault>
   );
 }
 
