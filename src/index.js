@@ -5,11 +5,13 @@ import App from './App';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
+const Page404 = () => (<div>Página 404</div>)
+
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path="/" component={App} exact />
-      <Route component={App} />
+      <Route component={Page404} />
     </Switch>
   </BrowserRouter>,
   document.getElementById('root')
