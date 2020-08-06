@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 function Button (props) {
   return (
-    <ButtonContainer as="a" href={props.href} className={props.className}>
+    <ButtonContainer as={props.as} to={props.to} className={props.className}>
       {props.children}
     </ButtonContainer>
   )
