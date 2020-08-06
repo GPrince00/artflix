@@ -8,7 +8,7 @@ const Menu = ()=>{
   return (
     <nav className="Menu">
       <Link to="/">
-        <img className="Logo" src={Logo} alt="MorenoFlix logo" />
+        <img className="Logo" src={Logo} alt="ArtFlix logo" />
       </Link>
       
       <Button as={Link} className="ButtonLink" to="/cadastro/video">
