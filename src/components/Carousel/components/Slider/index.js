@@ -2,6 +2,7 @@
 import React from 'react';
 import SlickSlider from 'react-slick';
 import styled from 'styled-components';
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 
 const Container = styled.ul`
   padding: 0;
@@ -21,12 +22,47 @@ const Container = styled.ul`
   }
   
   .slick-prev {
-    left: 0;
+    left: 5px;
   }
   .slick-next {
-    right: 16px;
+    right: 5px;
   }
 `;
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick, categoryColor } = props;
+  return (
+    <FaAngleLeft
+      className={className}
+      style={{
+        ...style,
+        color: categoryColor,
+        borderRadius: "50%",
+        backgroundColor: "#f8f8f8",
+      }}
+      onClick={onClick}
+    >
+    </FaAngleLeft>
+  );
+}
+
+function SampleNextArrow(props) {
+  const { className, onClick, style, categoryColor } = props;
+  return (
+    <FaAngleRight
+      onClick={onClick}
+      style={{
+        ...style,
+        color: categoryColor,
+        borderRadius: "50%",
+        backgroundColor: "#f8f8f8"
+      }}
+      className={className}
+    >
+    </FaAngleRight>
+  );
+  
+}
 
 export const SliderItem = styled.li`
   margin-right: 16px;
@@ -38,8 +74,7 @@ export const SliderItem = styled.li`
   }
 `;
 
-
-const Slider = ({ children }) => (
+const Slider = ({ children, categoryColor}) => (
   <Container>
     <SlickSlider {...{
       dots: false,
@@ -49,6 +84,8 @@ const Slider = ({ children }) => (
       variableWidth: true,
       adaptiveHeight: true,
     }}
+    prevArrow={<SamplePrevArrow categoryColor={categoryColor}/>}
+    nextArrow={<SampleNextArrow categoryColor={categoryColor}/>}
     >
       {children}
     </SlickSlider>
